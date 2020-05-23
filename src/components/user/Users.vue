@@ -119,7 +119,7 @@
       title="分配角色"
       :visible.sync="setRoleDialogVisible"
       width="50%"
-      :before-close="handleClose" @close='setRoleDialogClosed'
+      @close='setRoleDialogClosed'
     >
       <div>
         <p>当前用户:{{userInfo.username}}</p>
@@ -169,7 +169,7 @@ export default {
       queryInfo: {
         query: "",
         pagenum: 1,
-        pagesize: 2
+        pagesize: 10
       },
       userList: [],
       total: 0,

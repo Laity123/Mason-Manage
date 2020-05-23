@@ -8,7 +8,7 @@
     </el-breadcrumb>
     <!-- 卡片视图 -->
     <el-card class="box-card">
-      <el-table :data="rightsList" border style="width: 100%" stripe>
+      <el-table :data="rightsList" border style="width: 100%" stripe class="treeTable">
         <el-table-column label="#" type="index"></el-table-column>
         <el-table-column prop="authName" label="权限名称"></el-table-column>
         <el-table-column prop="path" label="路径"></el-table-column>
@@ -43,13 +43,14 @@ export default {
       if (res.meta.status !== 200) {
         return this.$message.error("获取权限列表失败!");
       }
-      this.$message.success("获取权限列表成功!");
       this.rightsList = res.data;
-      console.log(this.rightsList);
     }
   }
 };
 </script>
 
 <style lang='less' scoped>
+.treeTable {
+  margin-top: 15px;
+}
 </style>
